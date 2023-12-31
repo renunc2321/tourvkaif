@@ -62,9 +62,7 @@ export async function downloadFile() {
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    const filenameMatch = "pdf"
-    const filename = filenameMatch && filenameMatch.length > 1 ? filenameMatch[1] : 'file';
-    link.setAttribute('download', filename);
+    link.setAttribute('download', 'file');
     document.body.appendChild(link);
     link.click();
 
