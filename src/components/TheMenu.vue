@@ -17,10 +17,17 @@ defineProps({
 
 const emit = defineEmits({
   navigate: isPageValid,
-  check: true
+  check: true,
+  toggleMenu: true
 })
 
+function click(page) {
+  emit('toggleMenu')
+  emit('navigate', page)
+}
+
 async function exit() {
+  emit('toggleMenu')
   await logout()
   emit('check')
 }
@@ -37,11 +44,11 @@ async function exit() {
       :href="`#${page}`"
       :class="{ 'text-black bg-white': currentPage === page }"
       class="px-[20px] py-[12px] rounded-md capitalize"
-      @click="emit('navigate', page)"
+      @click="click(page)"
     >
       {{ text }}
     </a>
-    <a class="px-[20px] py-[12px] rounded-md"> Сменить пароль </a>
+    <a @click="emit('toggleMenu')" class="px-[20px] py-[12px] rounded-md"> Сменить пароль </a>
     <a class="px-[20px] py-[12px] cursor-pointer rounded-md text-[#FF8500]" @click="exit">
       Выйти
     </a>

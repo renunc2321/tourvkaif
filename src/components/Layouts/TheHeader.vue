@@ -64,6 +64,7 @@ function check() {
       :is-menu-visible="isMenuVisible"
       @navigate="emit('navigate', $event)"
       @check="check"
+      @toggle-menu="toggleMenu"
     />
   </header>
 </template>
