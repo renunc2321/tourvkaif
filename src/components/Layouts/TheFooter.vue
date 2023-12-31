@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="hidden md:flex justify-between text-[#888] mt-28 py-8 px-4 max-w-screen-xl mx-auto border-t-[1px] text-sm"
+    class="flex justify-between max-w-screen-xl mx-auto py-8 px-4   border-t text-sm text-[#888]"
   >
     <p>© 2023 “Кайф Тур”. Все права защищены.</p>
     <p class="cursor-pointer">Пользовательское соглашение</p>

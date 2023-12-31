@@ -1,6 +1,6 @@
 <script setup>
 import { NAV_ITEMS } from '@/constants'
-import authService from '@/services/auth.service'
+import { logout } from '@/services/auth.service'
 import { isPageValid } from '@/validators'
 
 defineProps({
@@ -21,7 +21,7 @@ const emit = defineEmits({
 })
 
 async function exit() {
-  await authService.logout()
+  await logout()
   emit('check')
 }
 </script>

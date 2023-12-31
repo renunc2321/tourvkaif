@@ -7,6 +7,12 @@ export const FILTER_ALL = 'all'
 export const TYPE_HOTEL = 'hotel'
 export const TYPE_TOUR = 'tour'
 
+export const CARD_TOP_ITEMS = {
+  'TOUR': 'Тур',
+  'HOT_TOUR': 'Горящий тур',
+  'HOTEL': 'Отель'
+}
+
 export const CHECKBOX_ITEMS = {
   [TYPE_HOTEL]: 'отели',
   [TYPE_TOUR]: 'туры'

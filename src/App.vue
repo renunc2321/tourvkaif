@@ -1,15 +1,15 @@
 <script setup>
-import LoginPopup from '@/components/LoginPopup.vue'
-import TheHeader from '@/components/TheHeader.vue'
+import ClientsTourType from '@/components/ClientsTourType.vue'
+import TheFooter from '@/components/Layouts/TheFooter.vue'
+import TheHeader from '@/components/Layouts/TheHeader.vue'
+import LoginPopup from '@/components/Popups/LoginPopup.vue'
 import { normalizePageHash } from '@/functions'
 import TheClients from '@/pages/TheClients.vue'
 import TheStatistics from '@/pages/TheStatistics.vue'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import TheNav from './components/TheNav.vue'
 import { FILTER_NEW, PAGE_CLIENTS, PAGE_STATISTICS } from './constants'
-import userService from './services/user.service'
-import ClientsTourType from './components/ClientsTourType.vue'
-import TheFooter from './components/TheFooter.vue'
+import { getClients } from '@/services/admin.service'
 
 const currentPage = ref(normalizePageHash())
 const activeClientsFilter = ref(FILTER_NEW)
@@ -45,7 +45,7 @@ async function getAll() {
   }
 
   try {
-    const res = await userService.getAllTourHotelData()
+    const res = await getClients()
     clientsList.value = res.data
   } catch (error) {
     console.log(error)
@@ -119,7 +119,7 @@ checkUserLogin()
       </div>
     </div>
   </main>
-  <TheFooter />
+  <TheFooter class="hidden md:block" />
 
   <LoginPopup v-if="isStateLoginPopup" @checkUserLogin="checkUserLogin" />
 </template>

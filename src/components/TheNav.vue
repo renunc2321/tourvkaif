@@ -2,7 +2,7 @@
 import { NAV_ITEMS } from '@/constants'
 import { isPageValid } from '@/validators'
 import NavItem from './NavItem.vue'
-import authService from '@/services/auth.service'
+import { logout } from '@/services/auth.service'
 
 defineProps({
   currentPage: {
@@ -18,7 +18,7 @@ const emit = defineEmits({
 })
 
 async function exit() {
-  await authService.logout()
+  await logout()
   emit('checkUserLogin')
 }
 </script>

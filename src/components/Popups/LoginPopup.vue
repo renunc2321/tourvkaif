@@ -1,5 +1,5 @@
 <script setup>
-import authService from '@/services/auth.service'
+import { login } from '@/services/auth.service'
 import { ref } from 'vue'
 
 const email = ref('')
@@ -15,7 +15,7 @@ async function submit() {
     password: password.value
   }
 
-  const response = await authService.login(user)
+  const response = await login(user)
   if (typeof response === 'string') {
     errorString.value = response
     errorState.value = true

@@ -42,7 +42,7 @@ export function formatTimeRange(timeString) {
   return `${times[0]} - ${times[1]}`
 }
 
-export function formatDurationAndType(timeString, flightType) {
+export function formatFlightAndType(timeString, flightType) {
   const times = timeString.split(' ')
   const startTime = times[0]
   const endTime = times[1]

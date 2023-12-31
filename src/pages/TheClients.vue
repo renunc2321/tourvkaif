@@ -1,6 +1,6 @@
 <script setup>
 import AllClientsFilter from '@/components/AllClientsFilter.vue'
-import ClientItem from '@/components/ClientItem.vue'
+import MobileCardTour from '@/components/OrderCards/MobileCardTour.vue'
 import ClientsTourType from '@/components/ClientsTourType.vue'
 import TheClientsFilter from '@/components/TheClientsFilter.vue'
 import { FILTER_ALL } from '@/constants'
@@ -43,11 +43,13 @@ const emit = defineEmits({
       @changeCategory="emit('changeCategory', $event)"
     />
 
-    <ClientItem
+    <MobileCardTour class='mb-6' />
+
+    <!-- <ClientItem
       class="md:mt-8"
       v-for="client in clientsList"
       :key="client.top.id"
       :client="client"
-    />
+    /> -->
   </div>
 </template>
