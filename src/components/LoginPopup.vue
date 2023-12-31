@@ -17,11 +17,11 @@ async function submit() {
 
   const response = await authService.login(user)
   if (typeof response === 'string') {
-		errorString.value = response
-		errorState.value = true
-		return
-	}
-	errorState.value = false
+    errorString.value = response
+    errorState.value = true
+    return
+  }
+  errorState.value = false
   emit('checkUserLogin')
 }
 </script>
@@ -45,13 +45,10 @@ async function submit() {
         v-model="password"
         placeholder="Пароль"
       />
-			<div
-				v-if='errorState'
-				class='flex text-sm gap-1 text-[#FF3C3C] w-full'
-			>
-				<img src="../assets/img/close-red.svg">
-				<p>{{ errorString }}</p>
-			</div>
+      <div v-if="errorState" class="flex text-sm gap-1 text-[#FF3C3C] w-full">
+        <img src="../assets/img/close-red.svg" />
+        <p>{{ errorString }}</p>
+      </div>
       <button
         class="p-4 w-full font-medium text-sm text-white bg-[#FF8500] rounded-lg"
         @click="submit"

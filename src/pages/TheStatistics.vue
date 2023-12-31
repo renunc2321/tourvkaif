@@ -26,14 +26,13 @@ const emit = defineEmits({
       @changeCategory="emit('changeCategory', $event)"
     />
 
-		<div class='md:hidden'>
-			<StatisticsDayItem />
+    <div class="md:hidden">
+      <StatisticsDayItem />
 
-    <StatisticsMonthItem />
-		</div>
-		<div class='hidden md:block md:mt-[50px]'>
-			<TheFullStatistics />
-		</div>
-    
+      <StatisticsMonthItem />
+    </div>
+    <div class="hidden md:block md:mt-[50px]">
+      <TheFullStatistics />
+    </div>
   </div>
 </template>

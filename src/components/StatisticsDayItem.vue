@@ -45,10 +45,10 @@ function dayFilterToggle(value) {
       </button>
     </div>
 
-		<div class='flex text-sm font-medium justify-between px-5 mt-4'>
-			<p class='text-[#FF8500]'>Прибыль, млн</p>
-			<p class='text-[#50D465]'>Продажи</p>
-		</div>
+    <div class="flex text-sm font-medium justify-between px-5 mt-4">
+      <p class="text-[#FF8500]">Прибыль, млн</p>
+      <p class="text-[#50D465]">Продажи</p>
+    </div>
 
     <div>
       <div class="mt-4 flex">

@@ -2,7 +2,7 @@
 defineProps({
   isMenuVisible: {
     required: true,
-    type: Boolean,
+    type: Boolean
   }
 })
 </script>

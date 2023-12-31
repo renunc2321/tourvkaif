@@ -42,7 +42,8 @@ async function exit() {
       {{ text }}
     </a>
     <a class="px-[20px] py-[12px] rounded-md"> Сменить пароль </a>
-    <a class="px-[20px] py-[12px] cursor-pointer rounded-md text-[#FF8500]"
-    @click='exit'> Выйти </a>
+    <a class="px-[20px] py-[12px] cursor-pointer rounded-md text-[#FF8500]" @click="exit">
+      Выйти
+    </a>
   </div>
 </template>

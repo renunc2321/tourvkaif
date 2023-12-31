@@ -45,13 +45,13 @@ function monthFilterToggle(value) {
       </button>
     </div>
 
-		<div class='flex text-sm font-medium justify-between px-5 mt-4'>
-			<p class='text-[#FF8500]'>Прибыль, млн</p>
-			<p class='text-[#50D465]'>Продажи</p>
-		</div>
+    <div class="flex text-sm font-medium justify-between px-5 mt-4">
+      <p class="text-[#FF8500]">Прибыль, млн</p>
+      <p class="text-[#50D465]">Продажи</p>
+    </div>
 
     <div>
-      <div class="mt-4 flex ">
+      <div class="mt-4 flex">
         <div class="flex">
           <div class="flex flex-col gap-[12px] font-semibold text-xs mr-1">
             <p class="mt-2.5">50</p>

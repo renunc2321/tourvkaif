@@ -30,7 +30,6 @@ const toggleMenu = () => {
 function check() {
   emit('checkUserLogin')
 }
-
 </script>
 
 <template>
@@ -44,12 +43,12 @@ function check() {
         </div>
       </div>
 
-      <div class='hidden md:flex items-center gap-[15px]'>
-        <div class='text-end text-[#222] text-xs'>
+      <div class="hidden md:flex items-center gap-[15px]">
+        <div class="text-end text-[#222] text-xs">
           <p>Кабинет администратора</p>
-          <p class='text-sm font-semibold'>John Dow</p>
+          <p class="text-sm font-semibold">John Dow</p>
         </div>
-        <img src="@/assets/img/avatar.png" alt="Avatar">
+        <img src="@/assets/img/avatar.png" alt="Avatar" />
       </div>
 
       <TheMenuButton

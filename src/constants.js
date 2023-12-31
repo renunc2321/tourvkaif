@@ -8,16 +8,16 @@ export const TYPE_HOTEL = 'hotel'
 export const TYPE_TOUR = 'tour'
 
 export const CHECKBOX_ITEMS = {
-	[TYPE_HOTEL]: 'отели',
-	[TYPE_TOUR]: 'туры',
+  [TYPE_HOTEL]: 'отели',
+  [TYPE_TOUR]: 'туры'
 }
 
 export const NAV_ITEMS = {
-	[PAGE_CLIENTS]: 'клиенты',
-	[PAGE_STATISTICS]: 'статистика',
+  [PAGE_CLIENTS]: 'клиенты',
+  [PAGE_STATISTICS]: 'статистика'
 }
 
 export const BUTTON_ITEMS = {
-	[FILTER_NEW]: 'Новые',
-	[FILTER_ALL]: 'Все клиенты',
+  [FILTER_NEW]: 'Новые',
+  [FILTER_ALL]: 'Все клиенты'
 }

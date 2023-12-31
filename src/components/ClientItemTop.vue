@@ -74,13 +74,13 @@ const type = top.tourType === 'TOUR' ? 'Тур' : top.tourType === 'HOTEL' ? 'О
       </div>
     </div>
 
-		<button class="hidden lg:block lg:ml-4" @click="change">
-        <img
-          :class="{ 'rotate-180': isActive, 'rotate-0': !isActive }"
-          class="transform transition duration-500 ease-in-out"
-          src="@/assets/img/arrow.svg"
-          alt="arrow"
-        />
-      </button>
+    <button class="hidden lg:block lg:ml-4" @click="change">
+      <img
+        :class="{ 'rotate-180': isActive, 'rotate-0': !isActive }"
+        class="transform transition duration-500 ease-in-out"
+        src="@/assets/img/arrow.svg"
+        alt="arrow"
+      />
+    </button>
   </div>
 </template>

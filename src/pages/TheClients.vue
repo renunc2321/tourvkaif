@@ -43,6 +43,11 @@ const emit = defineEmits({
       @changeCategory="emit('changeCategory', $event)"
     />
 
-    <ClientItem class='md:mt-8' v-for="client in clientsList" :key="client.top.id" :client="client" />
+    <ClientItem
+      class="md:mt-8"
+      v-for="client in clientsList"
+      :key="client.top.id"
+      :client="client"
+    />
   </div>
 </template>

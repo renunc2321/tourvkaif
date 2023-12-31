@@ -5,13 +5,13 @@ export function isPageValid(page) {
 }
 
 export function isChangeCategoryValid(value) {
-	return isString(value) || isNull(value)
+  return isString(value) || isNull(value)
 }
 
 export function isString(value) {
-	return typeof value === 'string'
+  return typeof value === 'string'
 }
 
 function isNull(value) {
-	return value === null
+  return value === null
 }

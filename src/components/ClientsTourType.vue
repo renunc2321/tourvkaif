@@ -13,21 +13,25 @@ const emit = defineEmits({
 })
 
 function change(value) {
-	if (props.selectedType === value) {
-		emit('changeCategory', null)
-		return
-	}
-	emit('changeCategory', value)
+  if (props.selectedType === value) {
+    emit('changeCategory', null)
+    return
+  }
+  emit('changeCategory', value)
 }
 </script>
 
 <template>
-  <div class='md:p-5 md:rounded-2xl md:bg-[#F8F8F8] md:w-[340px]'>
+  <div class="md:p-5 md:rounded-2xl md:bg-[#F8F8F8] md:w-[340px]">
     <p class="font-medium md:hidden">Показать только:</p>
     <div class="flex gap-[80px] mt-4 md:flex-col md:gap-[20px] md:mt-0">
-      <div v-for="(text, value) in CHECKBOX_ITEMS" :key="value" class="flex justify-between w-full md:w-[300px]">
+      <div
+        v-for="(text, value) in CHECKBOX_ITEMS"
+        :key="value"
+        class="flex justify-between w-full md:w-[300px]"
+      >
         <p class="capitalize font-medium md:text-base md:normal-case">
-          <span class='hidden md:inline'>Показать только </span>{{ text }}
+          <span class="hidden md:inline">Показать только </span>{{ text }}
         </p>
         <div
           @click="change(value)"

@@ -14,7 +14,7 @@ defineProps({
 
 const emit = defineEmits({
   navigate: isPageValid,
-	checkUserLogin: true
+  checkUserLogin: true
 })
 
 async function exit() {
@@ -36,8 +36,10 @@ async function exit() {
         {{ text }}
       </NavItem>
       <li>
-        <a class="py-[18px] px-5 rounded-2xl w-[300px] bg-[#F8F8F8] cursor-pointer block text-orange-500"
-				@click='exit'>
+        <a
+          class="py-[18px] px-5 rounded-2xl w-[300px] bg-[#F8F8F8] cursor-pointer block text-orange-500"
+          @click="exit"
+        >
           Выйти
         </a>
       </li>

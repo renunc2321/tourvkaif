@@ -87,19 +87,22 @@ checkUserLogin()
   <main class="mt-8 px-4 md:mt-[50px]">
     <h2 class="font-bold text-3xl md:text-[44px]">Кабинет администратора</h2>
 
-    <div class='lg:flex gap-6'>
-      <div class='hidden gap-5 mt-10 lg:mt-[50px] md:flex lg:flex-col'>
-        <TheNav :current-page="currentPage" v-on:navigate="goTo($event)" 
-        @checkUserLogin="checkUserLogin"/>
+    <div class="lg:flex gap-6">
+      <div class="hidden gap-5 mt-10 lg:mt-[50px] md:flex lg:flex-col">
+        <TheNav
+          :current-page="currentPage"
+          v-on:navigate="goTo($event)"
+          @checkUserLogin="checkUserLogin"
+        />
 
         <ClientsTourType
-        class='h-[108px]'
-        :selectedType="selectedType"
-        @changeCategory="changeCategory"
+          class="h-[108px]"
+          :selectedType="selectedType"
+          @changeCategory="changeCategory"
         />
       </div>
-      
-      <div class='w-full'>
+
+      <div class="w-full">
         <TheClients
           v-show="currentPage === PAGE_CLIENTS"
           :active-clients-filter="activeClientsFilter"
