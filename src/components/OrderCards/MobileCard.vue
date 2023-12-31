@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import MobileCardInfo from './MobileCardInfo.vue'
 import MobileCardInfoPassenger from './MobileCardInfoPassenger.vue'
 import MobileCardPassport from './MobileCardPassport.vue'
 import MobileCardTop from './MobileCardTop.vue'
@@ -11,43 +12,7 @@ const isActiveInfo = ref(true)
 const isActiveFlight = ref(true)
 const isActivePassenger = ref(true)
 const isActivePassport = ref(true)
-const top = {
-  tourType: 'TOUR',
-  id: 17,
-  filesAttached: [1, 2]
-}
-const body = {
-  info: {
-    location: 'Пример местоположения',
-    numberOfNights: 7,
-    room: 'standard',
-    meals: 'RO',
-    services: 'Пример услуг',
-    price: 12345.67
-  },
-  flight: {
-    departureDate: '2023-12-25',
-    time: '01:10 05:30',
-    type: 'прямой',
-    departureLocation: 'Москва, Шереметьево',
-    landingLocation: 'Анталия, Турция',
-    airline: 'PEGAS'
-  },
-  passengerInformation: {
-    fullName: 'БОЙКО АЛЕКСАНДР ВЯЧЕСЛАВОВИЧ',
-    phone: '79097844501',
-    dateOfBirth: 'Пример даты рождения',
-    mail: 'boiko.erizoo@gmail.com'
-  },
-  passportDetails: {
-    firstName: 'Имя',
-    surName: 'Фамилия',
-    passportNumber: 'Номер паспорта',
-    issuedBy: 'Кем выдан',
-    dateOfIssue: 'Дата выдачи',
-    validUntil: 'Срок действия'
-  }
-}
+
 function changeTop() {
   isActiveTop.value = !isActiveTop.value
 }
@@ -70,6 +35,16 @@ function changePassenger() {
 function changePassport() {
   isActivePassport.value = !isActivePassport.value
 }
+
+const props = defineProps({
+  client: {
+    required: true,
+    type: Object
+  }
+})
+
+const top = props.client.top
+const body = props.client.body
 </script>
 
 <template>
@@ -91,6 +66,7 @@ function changePassport() {
 
     <div v-if="isActiveTop">
       <MobileCardTourBody
+        v-if="top.tourType === 'TOUR'"
         :body="body"
         :is-active-info="isActiveInfo"
         @changeInfo="changeInfo"
@@ -98,6 +74,13 @@ function changePassport() {
         @changeFlight="changeFlight"
         :is-active-passenger="isActivePassenger"
         @change-passenger="changePassenger"
+      />
+      <MobileCardInfo
+        v-else
+        :tour-type="'HOTEL'"
+        :info="body.info"
+        :is-active-info="isActiveInfo"
+        @change-info="changeInfo"
       />
 
       <MobileCardInfoPassenger

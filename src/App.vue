@@ -106,6 +106,7 @@ checkUserLogin()
         <TheClients
           v-show="currentPage === PAGE_CLIENTS"
           :active-clients-filter="activeClientsFilter"
+          :window-width="windowWidth"
           @clients-filter="clientsFilter"
           :selected-type="selectedType"
           @change-category="changeCategory"
@@ -119,7 +120,7 @@ checkUserLogin()
       </div>
     </div>
   </main>
-  <TheFooter class="hidden md:block" />
+  <TheFooter class="hidden md:flex" />
 
   <LoginPopup v-if="isStateLoginPopup" @checkUserLogin="checkUserLogin" />
 </template>

@@ -46,3 +46,31 @@ export async function postFileUpload(id, file) {
       console.log(error)
     })
 }
+
+export async function downloadFile() {
+  const fileId = 1
+
+  try {
+    const response = await axios.get(`${API_URL}/files/download/${fileId}`, {
+      accept: '*/*',
+      headers: {
+        Authorization: authToken()
+      }
+    })
+
+    const blob = new Blob([response.data], { type: 'application/pdf' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    const filenameMatch = "pdf"
+    const filename = filenameMatch && filenameMatch.length > 1 ? filenameMatch[1] : 'file';
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(link);
+  } catch (error) {
+    console.error('Ошибка при скачивании файла:', error)
+  }
+}

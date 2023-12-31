@@ -1,4 +1,5 @@
 <script setup>
+import { downloadFile } from '@/services/admin.service'
 import BaseLoadingButton from './BaseLoadingButton.vue'
 
 defineProps({
@@ -10,5 +11,5 @@ defineProps({
 </script>
 
 <template>
-  <BaseLoadingButton class="text-[#50D465]"> Прикреплено {{ count }} файла </BaseLoadingButton>
+  <BaseLoadingButton class="text-[#50D465]" @click='downloadFile'> Прикреплено {{ count }} файла </BaseLoadingButton>
 </template>

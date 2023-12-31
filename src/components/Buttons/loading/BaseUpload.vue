@@ -1,9 +1,10 @@
 <script setup>
-import BaseLoadingButton from './BaseLoadingButton.vue'
+
 </script>
 
 <template>
-  <BaseLoadingButton class="text-[#FF8500] hover:underline">
-    Загрузить документы
-  </BaseLoadingButton>
+  <label for="fileInput" class="text-[#FF8500] hover:underline">
+    Выберите файл
+    <input id="fileInput" type="file" @change="uploadFileAutomatically" class="hidden" />
+  </label>
 </template>
