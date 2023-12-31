@@ -46,7 +46,7 @@ async function submit() {
         placeholder="Пароль"
       />
       <div v-if="errorState" class="flex text-sm gap-1 text-[#FF3C3C] w-full">
-        <img src="../assets/img/close-red.svg" />
+        <img src="@/assets/img/close-red.svg" />
         <p>{{ errorString }}</p>
       </div>
       <button
